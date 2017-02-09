@@ -10,9 +10,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
+    <h3>
+       Page is about me
+    </h3>
 
-    <code><?= __FILE__ ?></code>
+    <code>This my first project on framework Yii and my thesis jobs.</code>
 </div>

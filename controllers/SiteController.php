@@ -122,4 +122,10 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    public function actionPromo($message = 'hello') {
+        return $this->render('promo',
+            ['message' => $message]
+        );
+    }
 }
