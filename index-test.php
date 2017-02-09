@@ -5,7 +5,7 @@
  */
 
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../../../../home/woolf/Загрузки/yii_framework/framework/yii.php';
+$yii=dirname(__FILE__).'/../../../../opt/yii_framework/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/test.php';
 
 // remove the following line when in production mode
