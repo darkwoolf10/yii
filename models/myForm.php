@@ -1,5 +1,10 @@
 <?php  
-class myForm extends \yii\base\Model
+namespace app\models;
+
+use Yii;
+use yii\base\Model;
+
+class myForm extends Model
 {
 	public $email;
 

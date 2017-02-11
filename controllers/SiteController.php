@@ -3,11 +3,13 @@
 namespace app\controllers;
 
 use Yii;
+use yii\helpers\Html;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\myForm;
 
 class SiteController extends Controller
 {
@@ -123,9 +125,23 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionPromo($message = 'hello') {
+    public function actionPromo($message = 'This page with promo code.') {
         return $this->render('promo',
             ['message' => $message]
+        );
+    }
+
+    public function actionFormPromo() {
+        $form = new myForm;
+        if($form->load(Yii::$app->request->post()) && $form->validate()) {
+            $email = Html::encode($form->email);
+        } else {
+            $email = '';
+        }
+        return $this->render('form',
+            ['form' => $form,
+            'email' => $email
+            ]
         );
     }
 }

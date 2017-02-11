@@ -153,6 +153,20 @@ body {
     box-shadow: 1px 3px 1px 1px rgba(0,0,0,0.45);
 }
 
+/*===========================*/
+/******Стили для About*******/
+/*=========================*/
+
+.logoApple {
+    width: 100px;
+    height: 100px;
+}
+
+.logoAndroid {
+    width: 100px;
+    height: 100px;
+}
+
 /* add sorting icons to gridview sort links */
 a.asc:after, a.desc:after {
     position: relative;
