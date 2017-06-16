@@ -20,7 +20,7 @@ $config = [
         'rules' => [
             '<controller>/<action>' => '<controller>/<action>',
             ]
-        ], */ 
+        ],  */
             'cache' => [
             'class' => 'yii\caching\FileCache',
         ],

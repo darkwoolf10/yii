@@ -6,6 +6,7 @@ namespace app\models;
 
 use Yii;
 
+
 /**
  * This is the model class for table "{{%user}}".
  *
@@ -13,6 +14,7 @@ use Yii;
  * @property string $login
  * @property string $password
  * @property string $email
+ * @return static|null
  * @property string $nickname
  * @property string $about
  *
@@ -23,6 +25,12 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     /**
      * @inheritdoc
      */
+
+    public static function findByEmail($email)
+    {
+        return static::findOne(['email' => $email]);
+    }
+
     public static function tableName()
     {
         return '{{%user}}';
