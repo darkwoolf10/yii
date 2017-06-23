@@ -1,8 +1,7 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
-
-
+$db = require(__DIR__ . '/db.php');
 
 $config = [
     'id' => 'basic',
@@ -11,17 +10,9 @@ $config = [
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'QYHAkeL8NFB6vYxVbkE9V1WuouBOZz_X',
+            'cookieValidationKey' => 'HVgQw4i1_VLft8COnfUEeMoAe1JKi_js',
         ],
-        /*
-        'urlManager' => [
-        'enablePrettyUrl' => true,
-        'showScriptName' => false,
-        'rules' => [
-            '<controller>/<action>' => '<controller>/<action>',
-            ]
-        ],  */
-            'cache' => [
+        'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
@@ -47,7 +38,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php'),
+        'db' => $db,
         /*
         'urlManager' => [
             'enablePrettyUrl' => true,
@@ -56,6 +47,12 @@ $config = [
             ],
         ],
         */
+
+    ],
+    'modules' => [
+    'admin' => [
+        'class' => 'app\modules\admin\Module',
+        ],
     ],
     'params' => $params,
 ];

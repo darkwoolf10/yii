@@ -4,31 +4,7 @@
 
 $this->title = 'My Yii Application';
 ?>
-
-    <div id="header">
-    </div>
-    <div id="wrapper">
-      <div class="article">
-        <div class="submit_article"><i class="fa fa-apple " aria-hidden="true"></i></div>
-        <div class="submit_article"><i class="fa fa-apple " aria-hidden="true"></i></div>
-        <div class="product"></div>
-      </div>
-    </div>
-    <div id="footer">
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-<!--<div class="site-index">
+<div class="site-index">
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>
@@ -74,4 +50,4 @@ $this->title = 'My Yii Application';
         </div>
 
     </div>
-</div>-->
+</div>
