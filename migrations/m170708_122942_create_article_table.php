@@ -5,7 +5,7 @@ use yii\db\Migration;
 /**
  * Handles the creation of table `article`.
  */
-class m170623_154448_create_article_table extends Migration
+class m170708_122942_create_article_table extends Migration
 {
     /**
      * @inheritdoc
@@ -14,7 +14,7 @@ class m170623_154448_create_article_table extends Migration
     {
         $this->createTable('article', [
             'id' => $this->primaryKey(),
-            'title' =>$this->string(),
+            'title' => $this->string(),
             'description' => $this->text(),
             'content' => $this->text(),
             'date' => $this->date(),
@@ -23,7 +23,7 @@ class m170623_154448_create_article_table extends Migration
             'user_id' => $this->integer(),
             'status' => $this->integer(),
             'category_id' => $this->integer()
-          ]);
+        ]);
     }
 
     /**

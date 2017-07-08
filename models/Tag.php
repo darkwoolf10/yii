@@ -9,8 +9,6 @@ use Yii;
  *
  * @property integer $id
  * @property string $title
- *
- * @property ArticleTag[] $articleTags
  */
 class Tag extends \yii\db\ActiveRecord
 {
@@ -41,13 +39,5 @@ class Tag extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Title',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getArticleTags()
-    {
-        return $this->hasMany(ArticleTag::className(), ['tag_id' => 'id']);
     }
 }

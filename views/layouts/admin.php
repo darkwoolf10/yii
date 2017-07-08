@@ -37,10 +37,22 @@ AppAsset::register($this);
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
-            ['label' => 'Admin page', 'url' => ['/admin/default/index']],
+            ['label' => 'Admin panel', 'url' => ['/admin/default/index']],
             ['label' => 'Article', 'url' => ['/admin/article/index']],
-            ['label' => 'Categories', 'url' => ['/admin/category/index']],
-            ['label' => 'Tags', 'url' => ['/admin/tag/index']]
+            ['label' => 'Category', 'url' => ['/admin/category/index']],
+            ['label' => 'Tag', 'url' => ['/admin/tag/index']],
+            Yii::$app->user->isGuest ? (
+            ['label' => 'Login', 'url' => ['/site/login']]
+            ) : (
+                '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>'
+            )
         ],
     ]);
     NavBar::end();

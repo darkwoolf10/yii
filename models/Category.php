@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "category".
  *
  * @property integer $id
+ * @property string $title
  */
 class Category extends \yii\db\ActiveRecord
 {
@@ -25,7 +26,7 @@ class Category extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            
+            [['title'], 'string', 'max' => 255],
         ];
     }
 
@@ -36,6 +37,7 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'title' => 'Title',
         ];
     }
 }

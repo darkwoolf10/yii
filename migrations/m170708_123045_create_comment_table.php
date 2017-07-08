@@ -3,16 +3,16 @@
 use yii\db\Migration;
 
 /**
- * Handles the creation of table `coment`.
+ * Handles the creation of table `comment`.
  */
-class m170623_154612_create_coment_table extends Migration
+class m170708_123045_create_comment_table extends Migration
 {
     /**
      * @inheritdoc
      */
     public function up()
-    {
-        $this->createTable('comment', [
+   {
+       $this->createTable('comment', [
           'id' => $this->primaryKey(),
           'text'=>$this->string(),
           'user_id'=>$this->integer(),
@@ -22,7 +22,7 @@ class m170623_154612_create_coment_table extends Migration
 
         // creates index for column `user_id`
         $this->createIndex(
-          'idx-post-user_id',
+         'idx-post-user_id',
           'comment',
           'user_id'
         );
@@ -43,14 +43,14 @@ class m170623_154612_create_coment_table extends Migration
           'comment',
           'article_id'
         );
-        
+
         // add foreign key for table `article`
         $this->addForeignKey(
           'fk-article_id',
           'comment',
           'article_id',
           'article',
-          'id',
+         'id',
           'CASCADE'
         );
 
@@ -61,6 +61,6 @@ class m170623_154612_create_coment_table extends Migration
      */
     public function down()
     {
-        $this->dropTable('coment');
+        $this->dropTable('comment');
     }
 }

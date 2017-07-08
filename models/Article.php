@@ -18,7 +18,6 @@ use Yii;
  * @property integer $status
  * @property integer $category_id
  *
- * @property ArticleTag[] $articleTags
  * @property Comment[] $comments
  */
 class Article extends \yii\db\ActiveRecord
@@ -41,7 +40,7 @@ class Article extends \yii\db\ActiveRecord
             [['title', 'description', 'content'], 'string'],
             [['date'], 'date', 'format'=>'php:Y-m-d'],
             [['date'], 'default', 'value' => date('Y-m-d')],
-            [['title'], 'string', 'max' => 255 ]
+            [['title'], 'string', 'max' => 255]
         ];
     }
 
@@ -64,19 +63,9 @@ class Article extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getArticleTags()
-    {
-        return $this->hasMany(ArticleTag::className(), ['article_id' => 'id']);
-    }
+    public function saveImage($filename) {
+        $this->image = $filename;
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getComments()
-    {
-        return $this->hasMany(Comment::className(), ['article_id' => 'id']);
+        $this->save(false);
     }
 }
